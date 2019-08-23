@@ -1,0 +1,13 @@
+{
+    "name": "products-connector",
+    "config": {
+        "connector.class": "com.mongodb.kafka.connect.MongoSourceConnector",
+        "tasks.max": "1",
+        "connection.uri":"mongodb://mongo1:27017,mongo2:27017,mongo3:27017",
+        "mode": "incrementing",
+        "database":"MyDb",
+        "collection":"Products",
+        "topic.prefix": "Events",
+        "name": "products-connector"
+    }
+}
