@@ -163,3 +163,21 @@ Now consume data:
 
 
 ```
+
+
+
+
+
+
+
+
+
+
+kafka-topics --zookeeper zookeeper:2181 --create --topic product.events --partitions 1 --replication-factor 1
+
+curl -X POST -H "Content-Type: application/json" -d @sink-connector.json http://localhost:8083/connectors | jq
+
+kafka-console-producer --broker-list localhost:9092 --topic product.events
+
+{"Name": "Hat", "Price": 25}
+{"Name": "Shoe", "Price": 15}
